@@ -1,0 +1,21 @@
+\documentclass[]{scrbook}   
+\include{preamble/all}
+
+\begin{document}
+\sloppy                         % preferences more space between words over overrunning margins
+\lefthyphenmin=3                % suppresses hyphenation after only 1 or 2 characters
+
+\pagenumbering{roman}           
+\tableofcontents  
+\thispagestyle{empty}
+\pagenumbering{arabic}
+
+\part{Essays}
+\include{essays/my-essay}
+% \include{essays/martinez}     % uncomment to visualize the sample essay
+
+\part{Reviews}
+\include{reviews/my-review}
+
+\include{back/authors}
+\end{document}

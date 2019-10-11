@@ -1,0 +1,21 @@
+% define issue details
+\newcommand\thejournal{Variants.}
+\newcommand\thejournalsubtitle{The Journal of the European Society for Textual Scholarship}
+\newcommand\thevolume{15}
+\newcommand\theseason{}
+\newcommand\theyear{2020}
+\newcommand\theissue{\thejournal \ \thevolume \ (\theyear)} 
+\newcommand\thewebsite{http://journals.openedition.org/variants/}
+
+% choose copyright license
+\usepackage[               
+    type={CC},
+    modifier={by},
+    version={4.0},
+]{doclicense}
+
+% define \copyrightstatement for ease of use
+\newcommand{\copyrightstatement}{
+         \doclicenseIcon \ \theyear. 
+         \doclicenseLongText            % includes a link
+}
