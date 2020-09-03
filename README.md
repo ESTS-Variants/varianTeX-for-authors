@@ -1,10 +1,10 @@
-# VariantX For Authors
+# varianTeX For Authors
 
-This is a slimmed down version of [VariantX](https://github.com/WoutDLN/VariantX) LaTeX template, specifically tailored to authors who wish to submit a contribution to Variants.
+This is a slimmed down version of [varianTeX](https://github.com/WoutDLN/varianTeX) LaTeX template, specifically tailored to authors who wish to submit a contribution to Variants.
 
-## About VariantX
+## About varianTeX
 
-[VariantX](https://github.com/WoutDLN/VariantX) is a reusable LaTeX Template for journals in the Humanities. It was originally developed for [Variants](https://journals.openedition.org/variants/) (the journal of the [European Society for Textual Scholarship](https://textualscholarship.eu/)) by [Wout Dillen](https://github.com/WoutDLN).
+[varianTeX](https://github.com/WoutDLN/varianTeX) is a reusable LaTeX Template for journals in the Humanities. It was originally developed for [Variants](https://journals.openedition.org/variants/) (the journal of the [European Society for Textual Scholarship](https://textualscholarship.eu/)) by [Wout Dillen](https://github.com/WoutDLN).
 
 Although the template and its design choices are documented in the code itself, a [Wiki](https://github.com/WoutDLN/LaTeXJournal_Variants/wiki) with more user-friendly instructions on how to use it is currently under construction.
 
