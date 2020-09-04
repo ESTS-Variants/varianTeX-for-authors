@@ -1,4 +1,7 @@
 [![DOI](https://zenodo.org/badge/214399597.svg)](https://zenodo.org/badge/latestdoi/214399597)
+
+[Official Website](https://variantex.woutdillen.be)
+
 # varianTeX For Authors
 
 This is a slimmed down version of [varianTeX](https://github.com/WoutDLN/varianTeX) LaTeX template, specifically tailored to authors who wish to submit a contribution to Variants.
