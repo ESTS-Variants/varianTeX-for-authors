@@ -1,10 +1,8 @@
 [![DOI](https://zenodo.org/badge/214399597.svg)](https://zenodo.org/badge/latestdoi/214399597)
 
-[Official Website](https://variantex.woutdillen.be)
+# varianTeX for authors
 
-# varianTeX For Authors
-
-This is a slimmed down version of [varianTeX](https://github.com/WoutDLN/varianTeX) LaTeX template, specifically tailored to authors who wish to submit a contribution to Variants.
+varianTeX for authors is a slimmed down version of the [varianTeX](https://github.com/WoutDLN/varianTeX) LaTeX template, specifically tailored to authors who wish to submit a contribution to [Variants](https://journals.openedition.org/variants/).
 
 ## About varianTeX
 
@@ -12,6 +10,8 @@ This is a slimmed down version of [varianTeX](https://github.com/WoutDLN/varianT
 
 Although the template and its design choices are documented in the code itself, a [Wiki](https://github.com/WoutDLN/LaTeXJournal_Variants/wiki) with more user-friendly instructions on how to use it is currently under construction.
 
-## About the Author
+## About the author
 
 This template was developed by [Wout Dillen](https://github.com/WoutDLN), a postdoctoral researcher at the [University of Antwerp](https://uantwerpen.be) as part of his position as the university's CLARIAH-VL coordinator. He is also the General Editor of the Variants journal from Issue 15 onwards. 
+
+Check out our [official website](https://variantex.woutdillen.be)
