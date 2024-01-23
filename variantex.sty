@@ -51,47 +51,46 @@
 %%%% ENCODING
 
 \usepackage[L7x, T1]{fontenc}           % use 8-bit T1 fonts
-\usepackage[utf8]{inputenc}             % allow utf-8 input
 \usepackage[full]{textcomp}                   % allows \textrightarrow etc.
 
-% languages
+% LANGUAGES
 
-\usepackage[main=english, lithuanian, latin, hindi]{babel}
-\languageattribute{hindi}{modernhindi}
-%\usepackage{devanagari}
+\usepackage{polyglossia}
+\setmainlanguage{english} % Continue using english for rest of the document
+\setotherlanguages{hindi} % Now can use \texthindi
+\newfontfamily\hindifont{Noto Sans Devanagari}[Script=Devanagari]
 
-% special characters
-\DeclareUnicodeCharacter{2D7}{}         % allow ¡ character
-\DeclareUnicodeCharacter{45E}{}         % allow ў character
-\DeclareUnicodeCharacter{2032}{}        % allow ′ character
-\DeclareUnicodeCharacter{22EE}{}        % allow ⋮ character
-%\DeclareUnicodeCharacter{010D}{}        % allow č character
-\DeclareUnicodeCharacter{017F}{}        % allow ſ character
-\DeclareUnicodeCharacter{03F8}{}        % allow ϸ character
-\DeclareUnicodeCharacter{0915}{}        % allow क character
-\DeclareUnicodeCharacter{093E}{}        % allow  ा character
-\DeclareUnicodeCharacter{092E}{}        % allow म character
-\usepackage{textalpha}                  % allows for greek characters in text e.g. \textalpha = α
+% biblatex
+\usepackage[
+    authordate,
+    backend=biber,
+    natbib=true,
+    ]{biblatex-chicago}
+\usepackage{csquotes}
 
-% uncomment to allow for ſ character ('long s') through new \longs command. 
-% May throw up warnings, but should work
-% \usepackage[veryoldstyle]{kpfonts}      
-% \newcommand{\longs}{{\fontfamily{jkpvos}\selectfont{}s}} 
+% special characters  
+\usepackage{textalpha}                  % allows for greek characters in text 
 
 %%%% FONTS
 
 % Palatino font options
-\usepackage{mathpazo}                   % Palatino in LaTeX math
-\usepackage{tgpagella}                  % Palatino font
-\newcommand{\ltfamily}{\familydefault}  % Makes sure LaTeX keeps using Palatino in Lithuanian 
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\let\circ\undefined
+\let\diamond\undefined
+\let\bullet\undefined
+\let\emptyset\undefined
+\let\owns\undefined
+\setmathfont{TeX Gyre Pagella Math}
+\let\ocirc\undefined
+\let\widecheck\undefined
+
 \addtokomafont{disposition}{\rmfamily}  % Palatino for titles etc.
 \setkomafont{descriptionlabel}{         % font for description lists    
 \usekomafont{captionlabel}\bfseries     % Palatino bold
 }
 \setkomafont{caption}{\footnotesize}    % smaller font size for captions
-% To make sure LaTeX keeps using Palatino in Lithuanian:
-% in OVERLEAF change the following \newcommand to \renewcommand
-% \newcommand{\ltfamily}{\familydefault} 
+
 
 \usepackage{mathabx}                    % allows for nicer looking \cup, \curvearrowbotright, etc. !!IMPORTANT!! These are math symbols and should be surrounded by $dollar signs$
 \usepackage[normalem]{ulem}                       % allows for strikethrough with \sout etc.
@@ -154,20 +153,6 @@
          \doclicenseLongText            % includes a link
 }
 
-%%%% BIBTEX
-
-\usepackage[sort&compress,semicolon,authoryear,elide]{natbib} % for citations
-\usepackage{chapterbib}
-\bibliographystyle{variantex}
-%\setcitestyle{citesep={;}, aysep={}, yysep={;}, notesep={, }}
-\bibpunct%
-{(}% the opening bracket symbol, default = (
-{)}% the closing bracket symbol, default = )
-{;}% the punctuation between multiple citations, default = ;
-{a}% the letter `n' for numerical style, or `s' for numerical superscript style, any other letter for author-year, default = author-year
-{~}% the punctuation that comes between the author names and the year
-{;}% the punctuation that comes between years or numbers when common author lists are suppressed, default = ,
-
 %%%% ENVIRONMENTS
 % Environments
 \AtBeginEnvironment{quote}{\footnotesize\vskip 1em}
@@ -177,6 +162,7 @@
 
 % Preface
 \newenvironment{preface}{
+    \newrefsection
     \phantomsection
     \cleardoublepage
     \addcontentsline{toc}{part}{Editors' Preface}
@@ -189,11 +175,14 @@
     \thispagestyle{chaptertitlepage}
 }{}
 \AtEndEnvironment{preface}{%
+    % safeguard section numbering
+    \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}  
     %last page running header fix
     \protect\thispagestyle{preface}
 }
 % Essays
 \newenvironment{paper}{
+    \newrefsection
     \phantomsection
     % start every new paper on an uneven page 
     \cleardoublepage
@@ -212,7 +201,6 @@
     % no running title on first page, page number center bottom instead, include copyright statement
     \thispagestyle{contributiontitlepage}
     % formatting for the bibliography
-    \bibliographystyle{variantex}
 
 }{}
 \AtBeginEnvironment{paper}{
@@ -220,11 +208,14 @@
     \renewcommand*{\pagemark}{}%                            
 }
 \AtEndEnvironment{paper}{
+    % safeguard section numbering
+    \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}  
     % last page running header fix
     \protect\thispagestyle{fancy}%                              
 }
 % Reviews
 \newenvironment{review}{
+    \newrefsection
     \phantomsection
     % start every new paper on an uneven page 
     \cleardoublepage
@@ -238,7 +229,6 @@
     % no running title on first page, page number center bottom instead, include copyright statement
     \thispagestyle{contributiontitlepage}
     % formatting for the bibliography
-    \bibliographystyle{variantex}
 }{}
 \AtBeginEnvironment{review}{
 % keeps running title from the first page
@@ -247,6 +237,8 @@
 \AtEndEnvironment{review}{
     % author name(s)
     \begin{flushright}\emph{\thecontributor}\end{flushright}
+    % safeguard section numbering
+    \renewcommand{\thesubsection}{\thesection.\arabic{subsection}} 
     % last page running header fix
     \protect\thispagestyle{reviews}                           
 }
@@ -419,4 +411,3 @@
     %   #some comment
     %   cd Documents
     %   \end{lstlisting}
-
