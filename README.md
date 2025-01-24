@@ -8,7 +8,7 @@ varianTeX for authors is a slimmed down version of the [varianTeX](https://githu
 
 [varianTeX](https://github.com/WoutDLN/varianTeX) is a reusable LaTeX Template for journals in the Humanities. It was originally developed for [Variants](https://journals.openedition.org/variants/) (the journal of the [European Society for Textual Scholarship](https://textualscholarship.eu/)) by [Wout Dillen](https://github.com/WoutDLN).
 
-Although the template and its design choices are documented in the code itself (in the form of comments), we have also provided a [documentation wiki](https://github.com/WoutDLN/LaTeXJournal_Variants/wiki) with more user-friendly instructions on how to use it.
+Although the template and its design choices are documented in the code itself (in the form of comments), we have also provided a [documentation wiki](https://github.com/ESTS-Variants/varianTeX-for-authors/wiki) with more user-friendly instructions on how to use it.
 
 ## About the author
 
